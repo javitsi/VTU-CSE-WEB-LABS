@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="web5.css"?>
+
+<!--XML Extensible Markup Language; A markup Language like HTML; It's designed to Store and Transport Data, not process anything; It's designed to be self descriptive; 1st Line: Prolog Version and Character Encoding, Root Element and other nodes are nested in it; XML was designed to carry data with focus on what data is, HTML was designed to display data with focus on how data looks like; XML is extensible, you create your own tags, they aren't predefined; XML separates Data from Presentation; It simplifies data sharing, data transport, platform change, data availability; XML documents are formed as Element Trees; It starts at the root element and branches from root to child elements; All elements can have sub elements-->
+
+<!-- XML documents must have a root element; XML Prolog is optional, if it exists it must come first in the document; All XML Element must have closing tags; They are Case Sensitive too; XML Elements must be properly nested, Attribute Values must always be in quotes; Some characters have reserved meaning; example <price>23</price>; Case Sensitive, must always start with a letter or underscore; Element names cannot start with the letters xml; Names can't contain spaces, can contain letters, digits, hyphens, underscores and periods; attribute must be in ""; XML DTD(Document Type Definition): It defines a structure, legal elements and attributes of a XML element-->
+
+<student_info>
+	<h1>STUDENT INFORMATION</h1>
+	<h2>Student 1</h2>
+	<usn>1PE17CS170</usn>
+	<name>Vatsala Jha</name>
+	<college>PESIT</college>
+	<branch>CSE</branch>
+	<year>2017</year>
+	<email>jhavatsala@gmail.com</email>
+
+	<h2>Student 2</h2>
+	<usn>1PE18CS135</usn>
+	<name>Ludmila Khadka</name>
+	<college>PESIT</college>
+	<branch>CSE</branch>
+	<year>2018</year>
+	<email>khadkaludmila@gmail.com</email>
+
+	<h2>Student 3</h2>
+	<usn>1PE19CS100</usn>
+	<name>Harshita Jha</name>
+	<college>PESIT</college>
+	<branch>CSE</branch>
+	<year>2019</year>
+	<email>jhaharshita@gmail.com</email>
+</student_info>

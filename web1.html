@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> CALCULATOR </title>	
+<style> 
+	table,td,th{
+		border:2px solid; 
+		text-align:center; 
+		background-color:skyblue; 
+		margin:auto;
+	}
+	input{
+		text-align:center;
+	}
+</style>
+<script type="text/javascript">
+	function calc(clicked_id){
+		var value1 = parseFloat(document.getElementById("val1").value);
+		var value2 = parseFloat(document.getElementById("val2").value);
+		if(isNaN(value1) || isNaN(value2))
+			alert("Please Enter Numbers Only!!");
+		else if(clicked_id=="Add")
+			document.getElementById("answer").value=value1+value2;
+		else if(clicked_id=="Sub")
+			document.getElementById("answer").value=value1-value2;
+		else if(clicked_id=="Mul")
+			document.getElementById("answer").value=value1*value2;
+		else if(clicked_id=="Div"){
+			if(value2==0){
+				alert("Please Enter a non Zero Denominator");
+				location.reload();
+			}
+			else
+				document.getElementById("answer").value=value1/value2;
+		}
+	}
+	function cls(){
+		val1.value = "0";
+		val2.value = "0";
+		answer.value = "";
+	}
+</script>
+</head>
+<body>
+	<table>
+		<tr><th colspan="4">SIMPLE CALCULATOR</th></tr>
+		<tr>
+			<td>Enter Operand 1</td>
+			<td><input type="text" id="val1" value="0"></td>
+			<td>Enter Operand 2</td>
+			<td><input type="text" id="val2" value="0"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="Add (+)" id="Add" onclick="calc(this.id)"/></td>
+			<td><input type="button" value="Sub (-)" id="Sub" onclick="calc(this.id)"/></td>
+			<td><input type="button" value="Mul (*)" id="Mul" onclick="calc(this.id)"/></td>
+			<td><input type="button" value="Div (/)" id="Div" onclick="calc(this.id)"/></td>
+		</tr>
+		<tr>
+			<td>Result:</td>
+			<td><input type="text" id="answer"value="" disabled/></td>
+			<td colspan="2"><input type="button" value="Clear All" id="cls" onclick="cls()"></td>
+		</tr>
+	</table>
+</body>
+</html>

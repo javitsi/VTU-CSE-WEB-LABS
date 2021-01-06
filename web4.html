@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head><title>VOWEL OR REVERSE</title></head>
+<body>
+	<h1>Find the left most vowel or Reverse the Number</h1>
+	<input type="text" name="val" id="val" placeholder="Enter the String or a Number.">
+	<input type="button" value="submit" onclick="validate()">
+</body>
+<script type="text/javascript">
+	function validate(){
+		var input = document.getElementById('val').value;
+		if(isNaN(input))
+			findVowel(input);
+		else
+			findReverse(input);
+	}
+	function findReverse(input){
+		var num = parseInt(input);
+		var temp = num;
+		var rev = 0, rem = 0;
+		while(num > 0){
+			rem = num%10;
+			rev = rev*10+rem;
+			num = parseInt(num/10);
+		}
+		alert("Number: "+temp+"\nReverse Order: "+rev);
+	}
+	function findVowel(input){
+		var str = input.toLowerCase();
+		var pos = 0, ch = "";
+		for(var i=0; i<str.length; i++){
+			ch = str.charAt(i);
+			if(ch=="a" || ch=="e" || ch=="i" || ch=="o" || ch=="u"){
+				pos = i + 1;
+				break;
+			}
+		}
+		if(pos == 0)
+			alert("Vowel Not Found");
+		else
+			alert("Position of Leftmost Vowel in the String is: "+pos);
+	}
+</script>
+</html>

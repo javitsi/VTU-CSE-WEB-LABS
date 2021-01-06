@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TEXT GROWING</title>
+	<script type="text/javascript">
+		function animate(){
+			var val = window.getComputedStyle(document.getElementById("text")).fontSize;
+			var fontsize = parseInt(val);
+			var state = "Growing";
+			var timer = setInterval(textanimate,100);
+			function textanimate(){
+				if(state=="Growing"){
+					fontsize++;
+					document.getElementById("text").innerHTML="TEXT-GROWING";
+					document.getElementById("text").style.color="red";
+					document.getElementById("text").style.fontSize=fontsize+"pt";
+				}
+				if(fontsize == 50){
+					state = "Shrinking";
+				}
+				if(state=="Shrinking"){
+					fontsize--;
+					document.getElementById("text").innerHTML="TEXT-SHRINKING";
+					document.getElementById("text").style.color="blue";
+					document.getElementById("text").style.fontSize=fontsize+"pt";
+				}
+				if(fontsize==5){
+					//state = "Growing";
+					clearInterval(timer);
+				}
+			}
+		}
+	</script>
+</head>
+<body onload="animate()">
+	<h1 style="text-align:center;">INCREASE AND DECREASE ANIMATION TEXT</h1>
+	<p style="text-align:center;" id="text"></p>
+
+</body>
+</html>
